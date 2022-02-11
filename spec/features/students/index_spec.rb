@@ -18,7 +18,6 @@ RSpec.describe '/students', type: :feature do
       ProfessorStudent.create(student_id: granger.id, professor_id: mcgonagall.id)
 
       visit "/students"
-      save_and_open_page
 
       expect(page).to_not have_content(lupin.name)
       expect(page).to have_content("#{harry.name}: 2")
