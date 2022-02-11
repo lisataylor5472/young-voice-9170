@@ -21,7 +21,7 @@ RSpec.describe '/professors/:id', type: :feature do
   end
 
   describe 'user story 4' do
-    it 'shows student avg age per professor' do
+    it 'shows students in alphabetical order' do
       hagrid = Professor.create!(name: "Rubeus Hagrid", age: 38 , specialty: "Care of Magical Creatures")
       harry = Student.create(name: "Harry Potter" , age: 11 , house: "Gryffindor" )
       longbottom = Student.create(name: "Neville Longbottom" , age: 11 , house: "Gryffindor" )
@@ -32,7 +32,7 @@ RSpec.describe '/professors/:id', type: :feature do
       ProfessorStudent.create(student_id: weasley.id, professor_id: hagrid.id)
 
       visit "/professors/#{hagrid.id}"
-      save_and_open_page
+
       expect(page).to have_content(hagrid.name)
       expect(page).to have_content("Average Age of Students: 12")
     end
