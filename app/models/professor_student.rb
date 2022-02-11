@@ -1,3 +1,4 @@
-class ProfessorStudent <ApplicationRecord
-  has_many :students
+class ProfessorStudent < ApplicationRecord
+  belongs_to :professor
+  belongs_to :student
 end

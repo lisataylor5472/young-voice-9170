@@ -8,8 +8,6 @@ RSpec.describe '/professors', type: :feature do
 
       visit "/professors"
 
-      save_and_open_page
-      
       expect(page).to have_content(hagrid.name)
       expect(page).to have_content(hagrid.age)
       expect(page).to have_content(hagrid.specialty)
